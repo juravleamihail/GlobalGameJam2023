@@ -6,17 +6,16 @@ using UnityEngine.AI;
 
 public class UpdateNavigationSurface : MonoBehaviour
 {
-    NavMeshSurface navigationSurface;
-    public NavMeshData navMeshData;
+    NavMeshSurface Surface2D;
     // Start is called before the first frame update
-    void Start()
-    {
-        navigationSurface = GetComponent<NavMeshSurface>();
+
+    private void Start() {
+        Surface2D = GetComponent<NavMeshSurface>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        //navigationSurface.UpdateNavMesh(navMeshData);
+        Surface2D.UpdateNavMesh(Surface2D.navMeshData);
     }
 }

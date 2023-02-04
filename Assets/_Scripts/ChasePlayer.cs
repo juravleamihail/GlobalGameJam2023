@@ -20,6 +20,10 @@ public class ChasePlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       // agent.SetDestination(Target.position);
+        if (agent.pathStatus == NavMeshPathStatus.PathComplete && agent.remainingDistance == 0)
+        {
+            //TODO: damage player
+            Destroy(this.gameObject);
+        }
     }
 }
