@@ -17,6 +17,7 @@ public class EnemySpawnerController : Subject, IObservable
     private int enemyCounter;
     private PlayerController playerReference;
     private int aliveEnemies;
+    private bool inBounds;
 
     private void Awake()
     {
@@ -31,7 +32,8 @@ public class EnemySpawnerController : Subject, IObservable
     public void Update()
     {
         time += Time.deltaTime;
-        if (Spawning)
+        CheckPosition();
+        if (Spawning && inBounds)
         {
             aliveEnemies = enemiesPerWave;
             if (time % 60 >= 0.5f)
@@ -49,6 +51,23 @@ public class EnemySpawnerController : Subject, IObservable
                 }
                 time = 0f;
             }
+        }
+    }
+
+    private void CheckPosition()
+    {
+        var spawnerPosition = transform.position;
+        if (spawnerPosition.y is > 107 or < -107)
+        {
+            inBounds = false;
+        }
+        else if(spawnerPosition.x is > 128 or < -128)
+        {
+            inBounds = false;
+        }
+        else
+        {
+            inBounds = true;
         }
     }
 
