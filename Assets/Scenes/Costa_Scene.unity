@@ -325,6 +325,26 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
+--- !u!1 &1953161621 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3844588337916392019, guid: 0040c254a733b45e1afcf8338e644365, type: 3}
+  m_PrefabInstance: {fileID: 3844588337358495350}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1953161627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1953161621}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca8504fbe09127647ad8a53f365e5bfe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  additionWeapon: {fileID: 0}
+  minusWeapon: {fileID: 0}
+  multiplicationWeapon: {fileID: 0}
 --- !u!1001 &808769207461471309
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -393,6 +413,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1022550029519401947, guid: 0040c254a733b45e1afcf8338e644365, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3844588337916392017, guid: 0040c254a733b45e1afcf8338e644365, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -440,6 +464,14 @@ PrefabInstance:
     - target: {fileID: 3844588337916392019, guid: 0040c254a733b45e1afcf8338e644365, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 3844588337916392030, guid: 0040c254a733b45e1afcf8338e644365, type: 3}
+      propertyPath: m_Simulated
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3844588337916392030, guid: 0040c254a733b45e1afcf8338e644365, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0040c254a733b45e1afcf8338e644365, type: 3}
