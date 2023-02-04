@@ -4,7 +4,7 @@ using UnityEngine;
 public class EnemyController : MonoBehaviour
 {
 	private PlayerController playerReference;
-	
+	public ParticleSystem deathParticles;
 	private const float SPEED = 8;
 	
 	private void Start()
@@ -21,6 +21,7 @@ public class EnemyController : MonoBehaviour
 	{
 		if(other.gameObject.CompareTag("Player"))
 		{
+			Instantiate(deathParticles, transform.position, Quaternion.identity);
 			playerReference.Health--;	
 			Destroy(gameObject);
 		}
