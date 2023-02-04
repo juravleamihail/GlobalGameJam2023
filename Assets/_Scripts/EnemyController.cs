@@ -4,7 +4,7 @@ using UnityEngine;
 public class EnemyController : Subject
 {
 	private PlayerController playerReference;
-	
+	public ParticleSystem deathParticles;
 	private const float SPEED = 8;
 	
 	private void Start()
@@ -19,10 +19,13 @@ public class EnemyController : Subject
 
 	private void OnTriggerEnter2D(Collider2D other)
 	{
-		if(other.gameObject.CompareTag("Player"))
+		if(other.gameObject.CompareTag("Weapon"))
 		{
+
+			Instantiate(deathParticles, transform.position, Quaternion.identity);
 			playerReference.Health--;
 			NotifyObservers();
+
 			Destroy(gameObject);
 		}
 	}
