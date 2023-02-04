@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-public class EnemyController : MonoBehaviour
+public class EnemyController : Subject
 {
 	private PlayerController playerReference;
 	
@@ -21,7 +21,8 @@ public class EnemyController : MonoBehaviour
 	{
 		if(other.gameObject.CompareTag("Player"))
 		{
-			playerReference.Health--;	
+			playerReference.Health--;
+			NotifyObservers();
 			Destroy(gameObject);
 		}
 	}
