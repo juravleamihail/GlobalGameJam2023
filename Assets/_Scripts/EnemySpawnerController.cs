@@ -5,13 +5,18 @@ using Unity.Mathematics;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-public class EnemySpawnerController : MonoBehaviour, IObservable
+public class EnemySpawnerController : Subject, IObservable
 {
     [SerializeField] private List<EnemyController> enemies;
+    [SerializeField] private int enemiesPerWave;
+
+    public bool Spawning;
+    public int AliveEnemies => aliveEnemies;
 
     private float time;
     private int enemyCounter;
     private PlayerController playerReference;
+    private int aliveEnemies;
 
     private void Awake()
     {
@@ -20,25 +25,39 @@ public class EnemySpawnerController : MonoBehaviour, IObservable
 
     private void Start()
     {
-        playerReference.Subscribe(this);
+       // playerReference.Subscribe(this);
     }
 
     public void Update()
     {
         time += Time.deltaTime;
-        if (time % 60 >= 0.5f)
+        if (Spawning)
         {
-            if (enemyCounter < 5)
+            aliveEnemies = enemiesPerWave;
+            if (time % 60 >= 0.5f)
             {
-                Instantiate(enemies[Random.Range(0, enemies.Count)], transform.position, quaternion.identity);
-                enemyCounter++;
+                if (enemyCounter < enemiesPerWave)
+                {
+                    var enemy = Instantiate(enemies[Random.Range(0, enemies.Count)], transform.position, quaternion.identity);
+                    enemy.GetComponent<EnemyController>().Subscribe(this);
+                    enemyCounter++;
+                }
+                else
+                {
+                    Spawning = false;
+                    enemyCounter = 0;
+                }
+                time = 0f;
             }
-            time = 0f;
         }
     }
 
     public void OnNotify()
     {
-        enemyCounter--;
+        aliveEnemies--;
+        if (aliveEnemies == 0)
+        {
+            NotifyObservers();
+        }
     }
 }
