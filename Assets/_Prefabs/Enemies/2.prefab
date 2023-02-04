@@ -185,7 +185,7 @@ GameObject:
   - component: {fileID: -3561870723042469265}
   m_Layer: 0
   m_Name: 2
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -218,6 +218,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0853175bbb4b04a0d8e5006163472ee5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deathParticles: {fileID: 1172641583615615655, guid: 4491a465a5a6724489a80f7f3100e5cc, type: 3}
 --- !u!61 &-3561870723042469265
 BoxCollider2D:
   m_ObjectHideFlags: 0
