@@ -5,13 +5,19 @@ using Unity.Mathematics;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-public class EnemySpawnerController : MonoBehaviour, IObservable
+public class EnemySpawnerController : Subject, IObservable
 {
     [SerializeField] private List<EnemyController> enemies;
+    [SerializeField] private int enemiesPerWave;
+
+    public bool Spawning;
+    public int AliveEnemies => aliveEnemies;
 
     private float time;
     private int enemyCounter;
     private PlayerController playerReference;
+    private int aliveEnemies;
+    private bool inBounds;
 
     private void Awake()
     {
@@ -20,25 +26,57 @@ public class EnemySpawnerController : MonoBehaviour, IObservable
 
     private void Start()
     {
-        playerReference.Subscribe(this);
+       // playerReference.Subscribe(this);
     }
 
     public void Update()
     {
         time += Time.deltaTime;
-        if (time % 60 >= 0.5f)
+        CheckPosition();
+        if (Spawning && inBounds)
         {
-            if (enemyCounter < 5)
+            aliveEnemies = enemiesPerWave;
+            if (time % 60 >= 0.5f)
             {
-                Instantiate(enemies[Random.Range(0, enemies.Count)], transform.position, quaternion.identity);
-                enemyCounter++;
+                if (enemyCounter < enemiesPerWave)
+                {
+                    var enemy = Instantiate(enemies[Random.Range(0, enemies.Count)], transform.position, quaternion.identity);
+                    enemy.GetComponent<EnemyController>().Subscribe(this);
+                    enemyCounter++;
+                }
+                else
+                {
+                    Spawning = false;
+                    enemyCounter = 0;
+                }
+                time = 0f;
             }
-            time = 0f;
+        }
+    }
+
+    private void CheckPosition()
+    {
+        var spawnerPosition = transform.position;
+        if (spawnerPosition.y is > 107 or < -107)
+        {
+            inBounds = false;
+        }
+        else if(spawnerPosition.x is > 128 or < -128)
+        {
+            inBounds = false;
+        }
+        else
+        {
+            inBounds = true;
         }
     }
 
     public void OnNotify()
     {
-        enemyCounter--;
+        aliveEnemies--;
+        if (aliveEnemies == 0)
+        {
+            NotifyObservers();
+        }
     }
 }
