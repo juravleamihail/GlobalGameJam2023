@@ -141059,6 +141059,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1953161627, guid: 0040c254a733b45e1afcf8338e644365, type: 3}
+      propertyPath: xWeapon
+      value: 
+      objectReference: {fileID: 5663098648143913771, guid: 05f218921692e3c4ba02d50118a40b13, type: 3}
+    - target: {fileID: 1953161627, guid: 0040c254a733b45e1afcf8338e644365, type: 3}
+      propertyPath: plusWeapon
+      value: 
+      objectReference: {fileID: 7625806529391750220, guid: 888c01dcae7f85b4c83ce8985194cdb2, type: 3}
+    - target: {fileID: 1953161627, guid: 0040c254a733b45e1afcf8338e644365, type: 3}
+      propertyPath: minusWeapon
+      value: 
+      objectReference: {fileID: 7293884594922645611, guid: a91353c1148f21b4abcaa1f4f399414c, type: 3}
     - target: {fileID: 3844588337916392017, guid: 0040c254a733b45e1afcf8338e644365, type: 3}
       propertyPath: m_RootOrder
       value: 1
