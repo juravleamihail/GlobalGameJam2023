@@ -6,7 +6,7 @@ public class BasicMovementController : MonoBehaviour
 {
     private const float SPEED = 30;
     [SerializeField] private Rigidbody2D rb2d;
- 
+
     void Update()
     {
         float moveHorizontal = Input.GetAxis ("Horizontal");
