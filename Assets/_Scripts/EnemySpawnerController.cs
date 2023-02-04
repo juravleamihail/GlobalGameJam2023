@@ -68,7 +68,6 @@ public class EnemySpawnerController : Subject, IObservable
 
     public void SpawnRadicalizedVersion(GameObject radicalizedEnemy, Vector3 position)
     {
-        Debug.Log("test");
         var enemy = Instantiate(radicalizedEnemy, position, quaternion.identity);
         enemy.GetComponent<EnemyController>().Subscribe(this);
         enemyCounter++;
