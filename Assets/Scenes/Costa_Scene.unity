@@ -152,7 +152,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3949041475837621688, guid: 5972305831733405c977fdfc41b0d4b3, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.1463457
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3949041475837621688, guid: 5972305831733405c977fdfc41b0d4b3, type: 3}
       propertyPath: m_LocalRotation.w
@@ -233,7 +233,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3949041475837621688, guid: 5972305831733405c977fdfc41b0d4b3, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.1463457
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3949041475837621688, guid: 5972305831733405c977fdfc41b0d4b3, type: 3}
       propertyPath: m_LocalRotation.w
@@ -542,7 +542,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 38.24, y: 32.003593}
+  m_Size: {x: 254.93333, y: 213.33333}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -556,7 +556,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1818391026}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -592,7 +592,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3949041475837621688, guid: 5972305831733405c977fdfc41b0d4b3, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.1463457
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3949041475837621688, guid: 5972305831733405c977fdfc41b0d4b3, type: 3}
       propertyPath: m_LocalRotation.w
@@ -831,7 +831,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8026815428137446681, guid: efe566049fb7f492d80a9b14854b1636, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 129
+      value: 128
       objectReference: {fileID: 0}
     - target: {fileID: 8293785108572574383, guid: efe566049fb7f492d80a9b14854b1636, type: 3}
       propertyPath: m_LocalPosition.y
