@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3147169374213680151}
   m_Layer: 0
   m_Name: Left
-  m_TagString: Untagged
+  m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -124,7 +124,7 @@ GameObject:
   - component: {fileID: 7880724421663307961}
   m_Layer: 0
   m_Name: Right
-  m_TagString: Untagged
+  m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -235,7 +235,7 @@ GameObject:
   - component: {fileID: 276276765430168317}
   m_Layer: 0
   m_Name: Down
-  m_TagString: Untagged
+  m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -345,7 +345,7 @@ GameObject:
   - component: {fileID: 2154009119575418440}
   m_Layer: 0
   m_Name: PlusWeapon
-  m_TagString: Untagged
+  m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -381,6 +381,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 025f14adc9118dc41a1b288ee40d2cc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  anim: {fileID: 0}
 --- !u!1 &7758770662461586470
 GameObject:
   m_ObjectHideFlags: 0
@@ -394,7 +395,7 @@ GameObject:
   - component: {fileID: 5474658592480464848}
   m_Layer: 0
   m_Name: Up
-  m_TagString: Untagged
+  m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

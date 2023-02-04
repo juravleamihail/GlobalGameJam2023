@@ -19,7 +19,7 @@ public class EnemyController : Subject
 
 	private void OnTriggerEnter2D(Collider2D other)
 	{
-		if(other.gameObject.CompareTag("Player"))
+		if(other.gameObject.CompareTag("Weapon"))
 		{
 
 			Instantiate(deathParticles, transform.position, Quaternion.identity);
