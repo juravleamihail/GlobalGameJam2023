@@ -43,11 +43,6 @@ public class Shooting : MonoBehaviour
 		}
 	}
 
-	private void OnTriggerEnter2D(Collider2D collision)
-	{
-		Destroy(collision.gameObject);
-	}
-
 	private void PlusAtack()
 	{
 		if (plusWeapon!=null)
