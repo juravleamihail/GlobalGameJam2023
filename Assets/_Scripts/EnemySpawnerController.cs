@@ -13,12 +13,14 @@ public struct EnemyWave
     [SerializeField] public int enemiesPerWave;
 }
 
-public class EnemySpawnerController : Subject, IObservable
-{
+public class EnemySpawnerController : Subject, IObservable {
     [SerializeField] private List<EnemyWave> enemyWaves;
 
     public bool Spawning;
-    public int AliveEnemies => aliveEnemies;
+    public int AliveEnemies {
+        get => aliveEnemies;
+        set =>  aliveEnemies = value;
+    }
 
     private float time;
     private int enemyCounter;
@@ -43,8 +45,7 @@ public class EnemySpawnerController : Subject, IObservable
         CheckPosition();
         if (Spawning && inBounds)
         {
-            aliveEnemies = enemyWaves[currentWave].enemiesPerWave;
-            if (time % 60 >= 0.5f)
+            if (time % 60 >= 1f)
             {
                 if (enemyCounter < enemyWaves[currentWave].enemiesPerWave)
                 {
@@ -54,6 +55,7 @@ public class EnemySpawnerController : Subject, IObservable
                     enemyController.EnemySpawnerController = this;
                     
                     enemyCounter++;
+                    aliveEnemies++;
                 }
                 else
                 {

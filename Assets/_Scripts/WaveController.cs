@@ -22,6 +22,7 @@ public class WaveController : MonoBehaviour, IObservable
         foreach (var enemySpawner in enemySpawners)
         {
             enemySpawner.Spawning = true;
+            enemySpawner.AliveEnemies = 0;
         }
         numberOfWaves--;
     }
@@ -38,6 +39,7 @@ public class WaveController : MonoBehaviour, IObservable
         if (numberOfWaves > 0)
         {
             NextWave();
+            Debug.Log("Number of waves = " + numberOfWaves);
         }
     }
 }

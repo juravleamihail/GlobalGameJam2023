@@ -161,6 +161,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deathParticles: {fileID: 1172641583615615655, guid: 4491a465a5a6724489a80f7f3100e5cc, type: 3}
-  RadicalizedEnemy: {fileID: 2399259698303694884, guid: 7a0a828945c434a0b968abc177b16a14, type: 3}
+  RadicalizedEnemy: {fileID: 2399259698303694884, guid: 5e21e7660adbb9c4ca8a6747a5a5f5a8, type: 3}
   points: 40
   damage: 40

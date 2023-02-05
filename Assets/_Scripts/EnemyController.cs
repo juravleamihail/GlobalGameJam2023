@@ -66,8 +66,13 @@ public class EnemyController : Subject
 		}
 		else
 		{
-			StartCoroutine(WaitToSpawnNextEnemy());
-		}
+            //StartCoroutine(WaitToSpawnNextEnemy());
+			if(enemySpawnerController != null) {
+                enemySpawnerController.SpawnRadicalizedVersion(RadicalizedEnemy, transform.position);
+            }
+            NotifyObservers();
+            Destroy(gameObject);
+        }
 	}
 
 	IEnumerator WaitToSpawnNextEnemy()
