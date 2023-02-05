@@ -69,7 +69,9 @@ public class EnemySpawnerController : Subject, IObservable
     public void SpawnRadicalizedVersion(GameObject radicalizedEnemy, Vector3 position)
     {
         var enemy = Instantiate(radicalizedEnemy, position, quaternion.identity);
-        enemy.GetComponent<EnemyController>().Subscribe(this);
+        var enemyController = enemy.GetComponent<EnemyController>();
+        enemyController.Subscribe(this);
+        enemyController.EnemySpawnerController = this;
         aliveEnemies++;
     }
 
