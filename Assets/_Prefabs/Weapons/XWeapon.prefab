@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4602097558437759965}
   - component: {fileID: 4067591324763166567}
   - component: {fileID: 5340958607252895710}
+  - component: {fileID: 285768071652653303}
   m_Layer: 0
   m_Name: CornerTopRight
   m_TagString: Weapon
@@ -111,6 +112,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.2067051, y: 0.21370243}
   m_EdgeRadius: 0
+--- !u!114 &285768071652653303
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 836360233897605113}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 388d2bc1c4ebd45f290fa8803c746b35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destroyWeapon: {fileID: 6405964112583416808}
 --- !u!1 &923718148235857380
 GameObject:
   m_ObjectHideFlags: 0
@@ -122,6 +136,7 @@ GameObject:
   - component: {fileID: 7852482940826114640}
   - component: {fileID: 4370461168638759478}
   - component: {fileID: 932224553619137392}
+  - component: {fileID: 2077929253001330329}
   m_Layer: 0
   m_Name: CornerBotLeft
   m_TagString: Weapon
@@ -222,6 +237,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.22030959, y: 0.21648084}
   m_EdgeRadius: 0
+--- !u!114 &2077929253001330329
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 923718148235857380}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 388d2bc1c4ebd45f290fa8803c746b35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destroyWeapon: {fileID: 6405964112583416808}
 --- !u!1 &5095795115493451493
 GameObject:
   m_ObjectHideFlags: 0
@@ -233,6 +261,7 @@ GameObject:
   - component: {fileID: 4421372815326060880}
   - component: {fileID: 5584034855614067764}
   - component: {fileID: 2636462671721641370}
+  - component: {fileID: 2920185179426420418}
   m_Layer: 0
   m_Name: CornerBotRight
   m_TagString: Weapon
@@ -333,6 +362,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.22030959, y: 0.21648084}
   m_EdgeRadius: 0
+--- !u!114 &2920185179426420418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5095795115493451493}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 388d2bc1c4ebd45f290fa8803c746b35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destroyWeapon: {fileID: 6405964112583416808}
 --- !u!1 &5543825976890078017
 GameObject:
   m_ObjectHideFlags: 0
@@ -344,6 +386,7 @@ GameObject:
   - component: {fileID: 8469332570538928968}
   - component: {fileID: 6905023665720992605}
   - component: {fileID: 7834843255382835383}
+  - component: {fileID: 6034334834235504795}
   m_Layer: 0
   m_Name: CornerTopLeft
   m_TagString: Weapon
@@ -444,6 +487,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.2067051, y: 0.21370243}
   m_EdgeRadius: 0
+--- !u!114 &6034334834235504795
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5543825976890078017}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 388d2bc1c4ebd45f290fa8803c746b35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destroyWeapon: {fileID: 6405964112583416808}
 --- !u!1 &5663098648143913771
 GameObject:
   m_ObjectHideFlags: 0
@@ -455,6 +511,7 @@ GameObject:
   - component: {fileID: 7492320105524777689}
   - component: {fileID: 6405964112583416808}
   - component: {fileID: 4890659916812736352}
+  - component: {fileID: 2298680648394910077}
   m_Layer: 0
   m_Name: XWeapon
   m_TagString: Weapon
@@ -494,6 +551,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 0}
+  audioSource: {fileID: 2298680648394910077}
 --- !u!95 &4890659916812736352
 Animator:
   serializedVersion: 5
@@ -514,3 +572,99 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!82 &2298680648394910077
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5663098648143913771}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
