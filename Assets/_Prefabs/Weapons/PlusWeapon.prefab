@@ -343,6 +343,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4663760974022532542}
   - component: {fileID: 2154009119575418440}
+  - component: {fileID: 6951038884562757389}
   m_Layer: 0
   m_Name: PlusWeapon
   m_TagString: Weapon
@@ -381,7 +382,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 025f14adc9118dc41a1b288ee40d2cc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  anim: {fileID: 0}
+  anim: {fileID: 6951038884562757389}
+--- !u!111 &6951038884562757389
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7625806529391750220}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: eba11131fe682fd44907af3f92b0e7a4, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: eba11131fe682fd44907af3f92b0e7a4, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &7758770662461586470
 GameObject:
   m_ObjectHideFlags: 0
