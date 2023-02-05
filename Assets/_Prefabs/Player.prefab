@@ -111,6 +111,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb2d: {fileID: 3844588337916392030}
+  spriteRenderer: {fileID: 225611576454894206}
+  sprites:
+  - {fileID: 21300000, guid: 085751ff8deb23b43a82f3c8d863b573, type: 3}
+  - {fileID: 21300000, guid: 801091924af14b44c9e358556c1bd297, type: 3}
+  - {fileID: 21300000, guid: e83bb67f88ba76c44909e7d9cde9867f, type: 3}
+  - {fileID: 21300000, guid: 8c2b7a36e971d1840b7b2f60fd3ab9ec, type: 3}
 --- !u!50 &3844588337916392030
 Rigidbody2D:
   serializedVersion: 4
