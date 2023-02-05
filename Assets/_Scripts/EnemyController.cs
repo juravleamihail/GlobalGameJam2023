@@ -40,7 +40,7 @@ public class EnemyController : Subject
 	private void DestroyEnemy()
 	{
 		if(RadicalizedEnemy == null) {
-			//aici cand inamicul nu mai are radical si trebuie dat bonus la player
+			//TODO: add bonus to player here with "value" variable
 			NotifyObservers();
 			Destroy(gameObject);
 		}
@@ -56,7 +56,6 @@ public class EnemyController : Subject
 		Destroy(GetComponent<SpriteRenderer>());
 		yield return new WaitForSeconds(0.5f);
 
-		//TODO: add bonus to player
 		enemySpawnerController.SpawnRadicalizedVersion(RadicalizedEnemy, transform.position);
 		Destroy(gameObject);
 	}
