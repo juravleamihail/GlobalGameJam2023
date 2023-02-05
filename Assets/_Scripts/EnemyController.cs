@@ -35,9 +35,11 @@ public class EnemyController : Subject
 		else if (other.gameObject.CompareTag("Player"))
 		{
 			playerReference.Health--;
-			DestroyEnemy();
+			NotifyObservers();
+			gameManager.life -= value;
+			Destroy(gameObject);
 		}
-	}
+    }
 
 	private void DestroyEnemy()
 	{
