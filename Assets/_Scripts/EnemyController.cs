@@ -7,11 +7,13 @@ public class EnemyController : Subject
 	public PlayerController PlayerReference => playerReference;
 	public ParticleSystem deathParticles;
 	public GameObject RadicalizedEnemy;
-	public int value;
+	public int points;
+	public int damage;
 	private GameManager gameManager;
 
 	private BoxCollider2D boxCollider2D;
 	private SpriteRenderer spriteRenderer;
+	private bool isInvulnerable = true;
 
 	public EnemySpawnerController EnemySpawnerController
 	{
@@ -29,11 +31,18 @@ public class EnemyController : Subject
 		
 		boxCollider2D  = GetComponent<BoxCollider2D>();
 		spriteRenderer = GetComponent<SpriteRenderer>();
+
+		isInvulnerable = true;
+		StartCoroutine(WaitToChangeInvulnerabilityForEnemy());
 	}
 
 	private void OnTriggerEnter2D(Collider2D other)
 	{
-		if(other.gameObject.CompareTag("Weapon"))
+		if(isInvulnerable) {
+			return;
+        }
+
+		if (other.gameObject.CompareTag("Weapon"))
 		{
 			Instantiate(deathParticles, transform.position, Quaternion.identity);
 			DestroyEnemy();
@@ -42,14 +51,14 @@ public class EnemyController : Subject
 		{
 			playerReference.Health--;
 			NotifyObservers();
-			gameManager.life -= value;
+			gameManager.life -= damage;
 			Destroy(gameObject);
 		}
     }
 
 	private void DestroyEnemy()
 	{
-        gameManager.AddHighscore(value);
+        gameManager.AddHighscore(points);
 
         if (RadicalizedEnemy == null) {
 			NotifyObservers();
@@ -65,9 +74,15 @@ public class EnemyController : Subject
 	{
 		Destroy(boxCollider2D);
 		Destroy(spriteRenderer);
-		yield return new WaitForSeconds(0.5f);
+		yield return new WaitForSeconds(0.3f);
 
 		enemySpawnerController.SpawnRadicalizedVersion(RadicalizedEnemy, transform.position);
 		Destroy(gameObject);
 	}
+
+    IEnumerator WaitToChangeInvulnerabilityForEnemy() {
+        yield return new WaitForSeconds(0.3f);
+
+		isInvulnerable = false;
+    }
 }
