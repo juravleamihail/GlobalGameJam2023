@@ -70,7 +70,7 @@ public class EnemySpawnerController : Subject, IObservable
     {
         var enemy = Instantiate(radicalizedEnemy, position, quaternion.identity);
         enemy.GetComponent<EnemyController>().Subscribe(this);
-        enemyCounter++;
+        aliveEnemies++;
     }
 
     private void CheckPosition()
@@ -93,7 +93,7 @@ public class EnemySpawnerController : Subject, IObservable
     public void OnNotify()
     {
         aliveEnemies--;
-        if (aliveEnemies == 0)
+        if (aliveEnemies <= 0)
         {
             NotifyObservers();
         }

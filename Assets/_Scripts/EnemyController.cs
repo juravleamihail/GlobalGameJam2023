@@ -77,6 +77,7 @@ public class EnemyController : Subject
 		yield return new WaitForSeconds(0.3f);
 
 		enemySpawnerController.SpawnRadicalizedVersion(RadicalizedEnemy, transform.position);
+		NotifyObservers();
 		Destroy(gameObject);
 	}
 
