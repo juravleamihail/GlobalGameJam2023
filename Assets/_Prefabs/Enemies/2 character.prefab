@@ -31,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 2399259698303694884}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -114,8 +114,8 @@ NavMeshAgent:
   m_GameObject: {fileID: 2399259698303694884}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 2.7
-  m_Speed: 3.5
+  m_Radius: 5
+  m_Speed: 5
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -139,8 +139,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f28e69185afc9e447beedee369a9942e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RadicalizedEnemy: {fileID: 2399259698303694884}
-  value: 0
 --- !u!61 &8724886671623237021
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -154,18 +152,18 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.056457043, y: -0.28228474}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 6.1, y: 6.1}
+    oldSize: {x: 20, y: 20}
     newSize: {x: 5.4, y: 7.64}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 5.4, y: 7.64}
+  m_Size: {x: 12.287761, y: 20.173464}
   m_EdgeRadius: 0
 --- !u!114 &-219265046567604937
 MonoBehaviour:
@@ -180,3 +178,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deathParticles: {fileID: 1172641583615615655, guid: 4491a465a5a6724489a80f7f3100e5cc, type: 3}
+  RadicalizedEnemy: {fileID: 0}
+  value: 0

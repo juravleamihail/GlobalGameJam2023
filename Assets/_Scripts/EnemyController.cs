@@ -52,7 +52,9 @@ public class EnemyController : Subject
 
 	IEnumerator WaitToSpawnNextEnemy() 
 	{
-		yield return new WaitForSeconds(2);
+		Destroy(GetComponent<BoxCollider2D>());
+		Destroy(GetComponent<SpriteRenderer>());
+		yield return new WaitForSeconds(0.5f);
 
 		//TODO: add bonus to player
 		enemySpawnerController.SpawnRadicalizedVersion(RadicalizedEnemy, transform.position);
