@@ -10,6 +10,9 @@ public class EnemyController : Subject
 	public int value;
 	private GameManager gameManager;
 
+	private BoxCollider2D boxCollider2D;
+	private SpriteRenderer spriteRenderer;
+
 	public EnemySpawnerController EnemySpawnerController
 	{
 		get => enemySpawnerController;
@@ -22,7 +25,10 @@ public class EnemyController : Subject
 	private void Awake()
 	{
 		playerReference = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
-		gameManager = GameObject.FindObjectOfType<GameManager>();
+		gameManager = FindObjectOfType<GameManager>();
+		
+		boxCollider2D  = GetComponent<BoxCollider2D>();
+		spriteRenderer = GetComponent<SpriteRenderer>();
 	}
 
 	private void OnTriggerEnter2D(Collider2D other)
@@ -55,8 +61,8 @@ public class EnemyController : Subject
 
 	IEnumerator WaitToSpawnNextEnemy() 
 	{
-		Destroy(GetComponent<BoxCollider2D>());
-		Destroy(GetComponent<SpriteRenderer>());
+		Destroy(boxCollider2D);
+		Destroy(spriteRenderer);
 		yield return new WaitForSeconds(0.5f);
 
 		enemySpawnerController.SpawnRadicalizedVersion(RadicalizedEnemy, transform.position);
