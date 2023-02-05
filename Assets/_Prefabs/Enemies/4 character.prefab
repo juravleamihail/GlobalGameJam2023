@@ -179,4 +179,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathParticles: {fileID: 1172641583615615655, guid: 4491a465a5a6724489a80f7f3100e5cc, type: 3}
   RadicalizedEnemy: {fileID: 2399259698303694884, guid: 823db96a4f1604d31b6b5081e79a771a, type: 3}
-  value: 0
+  value: 4

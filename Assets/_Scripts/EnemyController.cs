@@ -8,6 +8,7 @@ public class EnemyController : Subject
 	public ParticleSystem deathParticles;
 	public GameObject RadicalizedEnemy;
 	public int value;
+	private GameManager gameManager;
 
 	public EnemySpawnerController EnemySpawnerController
 	{
@@ -21,6 +22,7 @@ public class EnemyController : Subject
 	private void Awake()
 	{
 		playerReference = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
+		gameManager = GameObject.FindObjectOfType<GameManager>();
 	}
 
 	private void OnTriggerEnter2D(Collider2D other)
@@ -39,8 +41,9 @@ public class EnemyController : Subject
 
 	private void DestroyEnemy()
 	{
-		if(RadicalizedEnemy == null) {
-			//TODO: add bonus to player here with "value" variable
+        gameManager.AddHighscore(value);
+
+        if (RadicalizedEnemy == null) {
 			NotifyObservers();
 			Destroy(gameObject);
 		}
